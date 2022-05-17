@@ -20,7 +20,6 @@ unix {
     target.path = $$PLUGIN_DIR/Input
     INSTALLS += target
     PKGCONFIG += libADLMIDI
-    QMAKE_CLEAN = $$PLUGINS_PREFIX/Input/libadlmidi.so
 }
 
 win32 {
