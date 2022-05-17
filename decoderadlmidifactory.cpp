@@ -82,9 +82,9 @@ void DecoderAdlMidiFactory::showSettings(QWidget *parent)
 
 void DecoderAdlMidiFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About AdlMidi Reader Plugin"),
-                        tr("Qmmp AdlMidi Reader Plugin")+"\n"+
-                        tr("Written by: Greedysky <greedysky@163.com>"));
+    QMessageBox::about(parent, tr("About AdlMidi Reader Plugin"),
+                       tr("Qmmp AdlMidi Reader Plugin") + "\n" +
+                       tr("Written by: Greedysky <greedysky@163.com>"));
 }
 
 QString DecoderAdlMidiFactory::translation() const
