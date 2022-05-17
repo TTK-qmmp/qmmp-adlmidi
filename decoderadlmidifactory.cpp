@@ -28,6 +28,7 @@ DecoderProperties DecoderAdlMidiFactory::properties() const
     properties.protocols << "file";
     properties.hasSettings = true;
     properties.noInput = true;
+    properties.hasAbout = true;
     return properties;
 }
 
