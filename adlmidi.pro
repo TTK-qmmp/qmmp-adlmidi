@@ -43,7 +43,7 @@ contains(CONFIG, BUILD_PLUGIN_INSIDE){
         PKGCONFIG += $${QMMP_PKG} libADLMIDI
 
         PLUGIN_DIR = $$system(pkg-config $${QMMP_PKG} --variable=plugindir)/Input
-        INCLUDEPATH += $$system(pkg-config q$${QMMP_PKG} --variable=prefix)/include
+        INCLUDEPATH += $$system(pkg-config $${QMMP_PKG} --variable=prefix)/include
 
         plugin.path = $${PLUGIN_DIR}
         plugin.files = lib$${TARGET}.so

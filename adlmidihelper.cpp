@@ -37,7 +37,11 @@ bool AdlMidiHelper::initialize()
 
 void AdlMidiHelper::readSettings()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    QSettings settings;
+#else
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+#endif
     settings.beginGroup("Midi");
     if(!settings.value("use_wopl", false).toBool())
     {

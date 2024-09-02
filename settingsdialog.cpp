@@ -29,7 +29,11 @@ SettingsDialog::SettingsDialog(QWidget *parent)
         m_ui.banksComboBox->addItem(banks[i]);
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    QSettings settings;
+#else
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+#endif
     settings.beginGroup("Midi");
     m_ui.banksComboBox->setCurrentIndex(settings.value("index", -1).toInt());
     m_ui.checkBox->setChecked(settings.value("use_wopl", false).toBool());
@@ -40,7 +44,11 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 
 void SettingsDialog::accept()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    QSettings settings;
+#else
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+#endif
     settings.beginGroup("Midi");
     settings.setValue("index", m_ui.banksComboBox->currentIndex());
     settings.setValue("use_wopl", m_ui.checkBox->isChecked());
