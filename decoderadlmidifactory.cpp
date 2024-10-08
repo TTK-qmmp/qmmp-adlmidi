@@ -76,10 +76,17 @@ MetaDataModel* DecoderAdlMidiFactory::createMetaDataModel(const QString &path, b
     return new AdlMidiMetaDataModel(path);
 }
 
+#if (QMMP_VERSION_INT < 0x10700) || (0x20000 <= QMMP_VERSION_INT && QMMP_VERSION_INT < 0x20200)
 void DecoderAdlMidiFactory::showSettings(QWidget *parent)
 {
     (new SettingsDialog(parent))->show();
 }
+#else
+QDialog *DecoderAdlMidiFactory::createSettings(QWidget *parent)
+{
+    return new SettingsDialog(parent);
+}
+#endif
 
 void DecoderAdlMidiFactory::showAbout(QWidget *parent)
 {
