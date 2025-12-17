@@ -92,7 +92,9 @@ void DecoderAdlMidiFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About AdlMidi Reader Plugin"),
                        tr("Qmmp AdlMidi Reader Plugin") + "\n" +
-                       tr("Written by: Greedysky <greedysky@163.com>"));
+                       tr("Written by: Greedysky <greedysky@163.com>") + "\n" +
+                       tr("Based on the source code from the libADLMIDI") + "\n" +
+                       tr("Written by Vitaly Novichkov (C) 2015"));
 }
 
 QString DecoderAdlMidiFactory::translation() const
