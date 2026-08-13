@@ -1,4 +1,4 @@
-This is a plugin for Qmmp (1.6.0 or greater) which supports ADLMIDI file.
+This is an inut plugin for Qmmp (1.6.0 or later) that supports ADLMIDI files.
 
 Based on [libADLMIDI](https://github.com/Wohlstand/libADLMIDI) (MIDI synthesizer library with OPL3 emulation).
 
